@@ -81,8 +81,24 @@ this is react  prohect
 
 
   7. store 是最重要的一个环节 因为redux的核心思想是数据的统一的管理对吧
-  
-  安装 redux 
+
+     安装 redux  S会用 yarn  或者  npm 安装。
+
+     1. 创建一个 store 
+     2. 创建 reducer   要求返回一个函数 接收两个参数 一个是state  一个是 action
+        state 可以看做是整个图书馆的所有图书.
+        初始化的时候 数据为空
+     3. 在store 里面引入reducer 这样的初始化说明一个问题就是
+        store 知道现在里面的数据有多少。 初始化的时候我将这个todoList的
+        数据放在 reducer 里面意思是做一个初始化的图书登记 你的图书目录初始化。
+
+     4. 已经实现的功能是组件的数据从 reducer 里面获取。
+
+     5. 走改变store的方式。在事件中使用store 派发action 
+        然后派发出来的 action 不是自己处理 他需要给 reducer 去处理
+        当前的数据 和 想要做的事情一起传递给 reducer 
+
+     6. reducer 可以接收state 但是不能修改 state 
   
      
 
