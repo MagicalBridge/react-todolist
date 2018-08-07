@@ -21,7 +21,9 @@ this is react  prohect
 
 #### 4. TodoList新增删除的功能。
 
-  1. 
+  1. react中不允许 直接修改 state 里面的数据。
+
+  2. react中有一个概念是 immutable state不允许我们做做任何的改变。 
 
 
 
