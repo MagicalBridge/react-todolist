@@ -55,11 +55,11 @@ class TodoList extends Component {
     }
 
     handleItemDelete(index) {
-        const list = [...this.state.list];
-        list.splice(index, 1);
-        this.setState({
-            list: list
-        })
+        const action = {
+            type: 'delete_item',
+            index
+        }
+        store.dispatch(action);
     }
     handleStoreChange() {
         this.setState(store.getState());
