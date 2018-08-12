@@ -98,7 +98,13 @@ this is react  prohect
         然后派发出来的 action 不是自己处理 他需要给 reducer 去处理
         当前的数据 和 想要做的事情一起传递给 reducer 
 
-     6. reducer 可以接收state 但是不能修改 state 
+     6. reducer 可以接收state 但是不能修改 state
+  8. 将action的名称提取出来：
+     1. 为什么需要提取出来，其实很简单，当我们在代码中 直接写字符串的时候
+        由于没有直接的引用关系 所以可能会报错。
+     2. 我们需要将 actionType进行拆分。
+
+  
   
      
 
