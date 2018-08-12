@@ -103,6 +103,14 @@ this is react  prohect
      1. 为什么需要提取出来，其实很简单，当我们在代码中 直接写字符串的时候
         由于没有直接的引用关系 所以可能会报错。
      2. 我们需要将 actionType进行拆分。
+  
+  9. 使用actionCreator 统一的创建 action;
+    我们在组件中直接传入action这样做不太好 
+    我们一般选择创建一个actionCreator统一的管理action；
+    这样做的好处是在组件中是不需要引入actionTypes了
+    
+    1.创建actionCreator
+
 
   
   

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'; // es6的解构赋值。
 import store from './store';  // 引入store index.js 可以默认额省略不写
-import {CHANGE_INPUT_VALUE,ADD_TODO_ITEM,DELETE_ITEM} from './store/actionTypes';
+import {getInputValueAction, getAddItemAction, getDeleteItemAction } from './store/actionCreators'
 
 class TodoList extends Component {
     constructor(props) {
@@ -41,25 +41,17 @@ class TodoList extends Component {
     }
 
     handleInputChange(e) {
-        const action = { // 事件里面创建一个 action action 是一个对象
-            type: CHANGE_INPUT_VALUE,
-            value: e.target.value
-        }
+        const action = getInputValueAction(e.target.value);
         store.dispatch(action);
     }
 
     handleBtnClick() {
-        const action = {
-            type: ADD_TODO_ITEM
-        }
+        const action = getAddItemAction();
         store.dispatch(action);
     }
 
     handleItemDelete(index) {
-        const action = {
-            type: DELETE_ITEM,
-            index
-        }
+        const action = getDeleteItemAction(index);
         store.dispatch(action);
     }
     handleStoreChange() {
