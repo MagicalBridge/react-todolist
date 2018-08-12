@@ -111,6 +111,20 @@ this is react  prohect
     
     1.创建actionCreator
 
+  10. 复习一下rexux
+    1. store 是唯一的存储空间 —— 整个redux的核心的思想就是将数据统一的管理这个没毛病
+    2. 只有store 能够修改自己的数据：reduce 是一个处理的过程 最终返回的是一个新的数据
+       最后state拿到这个数据之后，进行的更新的操作 
+    3. reducer 必须是纯函数。
+      纯函数： 给定固定的输入就会有固定的输出 并且不会有任何的副作用。
+
+    核心的api
+    1.createStore 创建 store
+    2.store.dispatch
+    3.store.getState
+    4.store.subscribe
+
+
 
   
   
