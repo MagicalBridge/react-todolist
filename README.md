@@ -125,7 +125,8 @@ this is react  prohect
     4.store.subscribe
 
 
-
+#### UI组件和容器组件
+   1. UI组件负责页面的渲染 容器组件负责页面的逻辑
   
   
      
