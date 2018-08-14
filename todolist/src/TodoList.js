@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react'; // es6的解构赋值。
+import React, { Component } from 'react'; // es6的解构赋值。
 import store from './store';  // 引入store index.js 可以默认额省略不写
-import {getInputValueAction, getAddItemAction, getDeleteItemAction } from './store/actionCreators'
-
+import { getInputValueAction, getAddItemAction, getDeleteItemAction } from './store/actionCreators'
+import TodoListUI from './TodoListUI';
 class TodoList extends Component {
     constructor(props) {
         super(props)
@@ -11,32 +11,18 @@ class TodoList extends Component {
         this.handleInputChange = this.handleInputChange.bind(this); // 函数在 constructor 中绑定指向。
         this.handleBtnClick = this.handleBtnClick.bind(this);
         this.handleStoreChange = this.handleStoreChange.bind(this);
+        this.handleItemDelete = this.handleItemDelete.bind(this);
         store.subscribe(this.handleStoreChange);
     }
     render() {
         return (
-            <Fragment>
-                <div>
-                    <input
-                        value={this.state.inputValue}
-                        onChange={this.handleInputChange}
-                    />
-                    <button onClick={this.handleBtnClick}>提交</button>
-                </div>
-                <ul>
-                    {
-                        this.state.list.map((item, index) => {
-                            return (
-                                <li
-                                    key={index}
-                                    onClick={this.handleItemDelete.bind(this, index)}>
-                                    {item}
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
-            </Fragment>
+            <TodoListUI
+                inputValue={this.state.inputValue}
+                list={this.state.list}
+                handleBtnClick={this.handleBtnClick}
+                handleInputChange={this.handleInputChange}
+                handleItemDelete={this.handleItemDelete}
+            />
         )
     }
 
