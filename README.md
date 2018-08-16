@@ -132,7 +132,18 @@ this is react  prohect
 
 #### 无状态组件。
    1. 当我们的UI组件中只有一个render函数的时候，我们可以将这个组件完全的抽象出来 把他封装成一个函数。
-   2. 
+
+#### redux中发送异步请求获取数据
+   1. 这个功能算是颠覆性的。对于react而言 数据存储有一个专门的流程 也就是redux
+      我们借助redux的整个流程进行数据获取 修改state。
+
+   2. 安装axios的依赖
+   3. 在生命周期钩子中使用axios请求发送结果获取数据
+   4. 请求回来的数据想要更改store里面的数据需要借助action进行
+   5. 首先在ctionCreator 里面创建相关的 action 在 组件中 使用 函数 返回一个action
+   6. 使用store.dispatch 接收这个action 然后 将这个action发送给 reducer 
+   7. reducer 拿到action和原来的state 进过处理返回新的state
+   8. 组件订阅了状态的更新事件 这样整个的组件重新渲染了。
   
   
      

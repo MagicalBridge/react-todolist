@@ -1,4 +1,4 @@
-import {CHANGE_INPUT_VALUE,ADD_TODO_ITEM,DELETE_ITEM} from './actionTypes';
+import {CHANGE_INPUT_VALUE,ADD_TODO_ITEM,DELETE_ITEM,INIT_LIST} from './actionTypes';
 
 const defaultState = {
   inputValue: '',
@@ -11,6 +11,13 @@ export default (state = defaultState, action) => { // 默认的数据是一个�
     newState.inputValue = action.value;
     return newState;
   }
+
+  if (action.type === INIT_LIST) {
+    const newState = JSON.parse(JSON.stringify(state)); // 执行一个深拷贝;
+    newState.list = action.data;
+    return newState;
+  }
+
   if (action.type === ADD_TODO_ITEM) {
     const newState = JSON.parse(JSON.stringify(state)); // 执行一个深拷贝;
     newState.list.push(newState.inputValue);
