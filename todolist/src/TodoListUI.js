@@ -1,32 +1,29 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class TodoListUI extends Component {
-  render() {
-    return (
+const TodoListUI = (props) => {
+  return (
+    <div>
       <div>
-        <div>
-          <input
-            value={this.props.inputValue}
-            onChange={this.props.handleInputChange}
-          />
-          <button onClick={this.props.handleBtnClick}>提交</button>
-        </div>
-        <ul>
-          {
-            this.props.list.map((item, index) => {
-              return (
-                <li
-                  key={index}
-                  onClick={(index)=>{this.props.handleItemDelete(index)}}>
-                  {item}
-                </li>
-              )
-            })
-          }
-        </ul>
+        <input
+          value={props.inputValue}
+          onChange={props.handleInputChange}
+        />
+        <button onClick={props.handleBtnClick}>提交</button>
       </div>
-    )
-  }
+      <ul>
+        {
+          props.list.map((item, index) => {
+            return (
+              <li
+                key={index}
+                onClick={(index) => { props.handleItemDelete(index) }}>
+                {item}
+              </li>
+            )
+          })
+        }
+      </ul>
+    </div>
+  )
 }
-
 export default TodoListUI
