@@ -157,8 +157,14 @@ this is react  prohect
    6. 我们的actionCreator都是一个函数这里面的每一个函数都是返回一个对象的。
       使用thunk之后我们这个我们的异步请求就是可以返回一个函数了。返回函数的好处
       现在还不得而知，因此但是之后会知道的。
-   7. 
-  
+#### redux中间件
+
+   1. action 通过dispatch 方法传递给strore 那么action和store 中间就是dispatch这个方法。
+      我们说的中间件就是对dispatch 方法的封装。
+   2. 最原始的dispatch 接收一个action是一个对象传递给store这是没有中间件的情况
+   3. 当我们对于这个中间件做了升级之后比方说我们使用了redux-thunk之后 如果我们传给这个dispatch是一个函数的
+      时候 那么就会自动的执行这个action 因为已经是一个函数了。
+      redux-log
      
 
     
