@@ -1,7 +1,8 @@
 import React, { Component } from 'react'; // es6的解构赋值。
 import store from './store';  // 引入store index.js 可以默认额省略不写
-import { getInputValueAction, getAddItemAction, getDeleteItemAction, getTodoList} from './store/actionCreators'
+import { getInitList,getInputValueAction, getAddItemAction, getDeleteItemAction} from './store/actionCreators'
 import TodoListUI from './TodoListUI';
+// import axios from 'axios'; // 引入axios
 
 class TodoList extends Component {
   constructor(props) {
@@ -28,18 +29,9 @@ class TodoList extends Component {
   }
   // 生命周期函数组件挂载完毕
   componentDidMount() {
-    const action = getTodoList();
-    // console.log(action); // 这个时候返回的是一个函数 因为 getTodoList 生成的就是一个函数。
-    store.dispatch(action); // 将这个函数 重新通过 store的dispatch方法派发给store 传入的函数会被自动的执行。
-    // axios.post('http://www.ifruit.org:7300/mock/59afdddae4205b01cfc9ede5/api_1504685109840/front1/login.do', {
-    //   number: "13127733713"
-    // })
-    //   .then(res => {
-    //     let _resData = res.data.list;
-    //     console.log(_resData);
-    //     const action = initListAction(_resData);
-    //     store.dispatch(action);
-    //   })
+    const action = getInitList();
+    store.dispatch(action);
+    
   }
 
   handleInputChange(e) {

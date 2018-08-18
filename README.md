@@ -165,6 +165,14 @@ this is react  prohect
    3. 当我们对于这个中间件做了升级之后比方说我们使用了redux-thunk之后 如果我们传给这个dispatch是一个函数的
       时候 那么就会自动的执行这个action 因为已经是一个函数了。
       redux-log
+
+
+#### redxu-saga
+   1. 也是修改index里面的文件这样的话引入很方便。
+   2. 在saga 里面我们会找一个专门的地方 处理我们的异步的请求的逻辑。
+   3. sagas里面是是一个genneator的函数。这个函数里面
+   4. 使用saga进行配置了之后 我们在组件中 派发出去的action 不仅 reducer 能够接收到
+      而且在 sagas里面也能接收到      
      
 
     
