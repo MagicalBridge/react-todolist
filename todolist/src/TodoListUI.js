@@ -16,7 +16,7 @@ const TodoListUI = (props) => {
             return (
               <li
                 key={index}
-                onClick={(index) => { props.handleItemDelete(index) }}>
+                onClick={() => { props.handleItemDelete(index) }}>
                 {item}
               </li>
             )

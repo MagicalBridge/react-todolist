@@ -144,7 +144,20 @@ this is react  prohect
    6. 使用store.dispatch 接收这个action 然后 将这个action发送给 reducer 
    7. reducer 拿到action和原来的state 进过处理返回新的state
    8. 组件订阅了状态的更新事件 这样整个的组件重新渲染了。
-  
+
+#### redux-thunk中间件
+
+   1. redux-thunk这种中间件可以将我们的这种复杂的异步的请求放在 action中做处理。
+   2. 使用npm 或者yarn 安装redux-thunk 
+     yarn add 
+     npm install redux-thunk
+   3. 因为是rerdux的中间件 因此在使用的时候 需要使用redux的midware这样的对象进行学习创作。applyMiddleware 这种中间件的使用。
+   4. 通过在store 的 index 相关的文件引入 配置thunk 然后使用
+   5. 将异步的请求放在action中使用。
+   6. 我们的actionCreator都是一个函数这里面的每一个函数都是返回一个对象的。
+      使用thunk之后我们这个我们的异步请求就是可以返回一个函数了。返回函数的好处
+      现在还不得而知，因此但是之后会知道的。
+   7. 
   
      
 
