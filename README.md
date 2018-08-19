@@ -165,7 +165,18 @@ this is react  prohect
    3. 当我们对于这个中间件做了升级之后比方说我们使用了redux-thunk之后 如果我们传给这个dispatch是一个函数的
       时候 那么就会自动的执行这个action 因为已经是一个函数了。
       redux-log
-     
+
+#### react-redux 
+   1. 帮助我们在raact中更加方便的使用redux。
+   2. connect是连接 谁和谁做连接 TodoList和store做连接怎么做连接  有一个映射关系：
+    下面这个函数中的state指的是store里面的数据 将inputValue映射到 props 里面的
+    
+   `const mapStateToPros = (state) => { 
+      return {
+        inputValue: state.inputValue
+      }
+    }
+    `
 
     
     
