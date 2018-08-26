@@ -178,6 +178,29 @@ this is react  prohect
     }
     `
 
+   3. 在开发流程中使用redux首先就是创建store  index.js
+     因为这是核心的仓库，这个store相当于仓库的管理员
+     管理员创建完毕之后还远远不够，还需要一个笔记本来管理图书的
+     借入借出信息。此时我们创建另一个文件reducer.js 这是一个纯函数
+
+   4. 此时想要和组件之间做一个通信的话，我们需要将store 引入组件
+     在组件的 constructor 里面使用store.getState 来获取数据的相关的
+     内容。
+
+   5. 我们在index.js 外面包裹了一个组件 这个组件叫做provider
+     这是 react-redux 提供的一个核心的组件。
+
+   6. 我们在 组件中如何和store做连接呢，这里就是就需要另外一个api
+      connect
+
+   7. 我让自己的组件和store做连接 连接就有一个规则这个规则
+      就在 mapStateToPros 里面。将store里面数据映射到组件里面
+      作为props 这时候组件中的state.属性名 变成的是 props.value
+   8. 
+    
+
+
+
     
     
 
