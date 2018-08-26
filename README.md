@@ -165,6 +165,13 @@ this is react  prohect
    3. 当我们对于这个中间件做了升级之后比方说我们使用了redux-thunk之后 如果我们传给这个dispatch是一个函数的
       时候 那么就会自动的执行这个action 因为已经是一个函数了。
       redux-log
+
+
+####  开始简书项目的开发，学习相关的内容。
+   1. 初始化项目 只保留三个文件。
+   2. 为了做到样式的管理，在组件中引入一个第三方的模块
+     来管理我们的css styled-components 
+   3. yarn add styled-components
      
 
     
