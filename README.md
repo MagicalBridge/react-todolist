@@ -172,6 +172,14 @@ this is react  prohect
    2. 为了做到样式的管理，在组件中引入一个第三方的模块
      来管理我们的css styled-components 
    3. yarn add styled-components
+
+
+#### styled-components 
+   1. 使用react的组件我们希望的是引用的样式都是按照组件级别来
+      区分的。
+   2. injectGlobal 这个api引用的时候 说明使用要的是注入全局的样式。
+   3. 不同的浏览器内核对于原生的标签的表现形式是不一样的，因此会出现这样的问题。
+   4. common文件夹里面存放公共的区块去管理复用的组件。
      
 
     
