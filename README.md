@@ -239,7 +239,12 @@ this is react  prohect
 
      
 #### immutable js 进行数据的
+
     1. 首先安装 immutable js 
+    2. 之前我们在 reducer.js 里面 创建的对象中, 之前的普通的 state 对象 变成 fromJS的包裹的
+    对象，包裹完成之后。在组件中使用的时候 不能使用 . 操作符 而是使用 get 
+
+    3. 同样的在 reducer.js 里面修改数据的时候 使用的是 state.set('xxx',xxx)形式。
     
     
 
