@@ -185,10 +185,61 @@ this is react  prohect
 #### 对header组件进行 combineReducer 的拆分。
 
    1. 将组件内部的所有的 action 放在 actionCreator 中进行创建。
-   2. 
+
+      import * as actionTypes from './actionType.js';
+      export const searchFocus = () => ({
+        type: actionTypes.SEARCH_FOCUS
+      })
+
+      export const searchBlur = () => ({
+        type: actionTypes.SEARCH_BLUR
+      })
+
+    之前使用的是 引入单个常量的方式进行书写。现在
+    不这样进行, 采用 * 的 别名形式进行引入。
+
+    2. 看看 actionType.js 里面出现的代码：
+
+      export const SEARCH_FOCUS = 'header/SEARCH_FOCUS';
+      export const SEARCH_BLUR = 'header/SEARCH_BLUR';
+    
+    3. headerReduce.js 存放的是只有 这个header 组件才用到的数据
+
+    import * as actionTypes from './actionType.js';
+
+    const defaultState = {
+      focused: false
+    };
+
+    export default (state = defaultState, action) => {
+      if (action.type === actionTypes.SEARCH_FOCUS) {
+        return {
+          focused: true
+        }
+      }
+
+      if (action.type === actionTypes.SEARCH_BLUR) {
+        return {
+          focused: false
+        }
+      }
+      return state;
+    }
+
+    和actionCreator中同样都用到了actionTypes 也是引用这种  * 的形式
+
+
+    4. 在最外层的 reducer里面也是使用 combineReducer 
+
+      import { combineReducers } from 'redux';
+      import { headerReducer } from '../common/header/store/index.js';
+      export default combineReducers({
+        header: headerReducer
+      })
 
      
-
+#### immutable js 进行数据的
+    1. 首先安装 immutable js 
     
     
 

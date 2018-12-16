@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import headerReducer from '../common/header/store/headerReducer.js';
+import { headerReducer } from '../common/header/store/index.js';
 
 
 export default combineReducers({
