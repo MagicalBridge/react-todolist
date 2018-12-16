@@ -1,7 +1,8 @@
 import React, { Component } from 'react'; // es6的解构赋值。
 import store from './store';  // 引入store index.js 可以默认额省略不写
-import { getInputValueAction, getAddItemAction, getDeleteItemAction } from './store/actionCreators'
+import { getInputValueAction, getAddItemAction, getDeleteItemAction,initListAction } from './store/actionCreators'
 import TodoListUI from './TodoListUI';
+import axios from 'axios';
 class TodoList extends Component {
     constructor(props) {
         super(props)
@@ -24,6 +25,16 @@ class TodoList extends Component {
                 handleItemDelete={this.handleItemDelete}
             />
         )
+    }
+
+    // 
+    componentDidMount(){
+        axios.get('/list.json').then(res=>{
+            const data = res.data;
+            const action = initListAction(data);
+            store.dispatch(action);
+        })
+           
     }
 
     handleInputChange(e) {
