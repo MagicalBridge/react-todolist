@@ -196,7 +196,12 @@ this is react  prohect
    7. 我让自己的组件和store做连接 连接就有一个规则这个规则
       就在 mapStateToPros 里面。将store里面数据映射到组件里面
       作为props 这时候组件中的state.属性名 变成的是 props.value
-   8. 
+   8. 将action的常量进行拆分，创建的是actionType.js。
+
+   9. 将actionCreator的相关操作放在 actionCreator 里面这样可以
+      将项目的耦合度变得更加小。
+
+   10. 已经完成了相关的内容的开发，
     
 
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; // es6的解构赋值。
 import { connect } from 'react-redux';   // 这个api也很重要
+import {change_input_value,add_item, delete_handle} from './store/actionCreators';
 
 
 class TodoList extends Component {
@@ -17,7 +18,7 @@ class TodoList extends Component {
         <ul>
           {
             this.props.list.map((item,index)=>{
-              return <li key={index}>{item}</li>
+              return <li onClick={() => this.props.delete_item(index)} key={index}>{item}</li>
             })
           }
         </ul>
@@ -26,10 +27,11 @@ class TodoList extends Component {
   }
 }
 
+// 接收一个state 将store 里面数据映射给组件变成props
 const mapStateToPros = (state) => {
   return {
     inputValue: state.inputValue, // store 里面的inputvalue 会映射到我们的props里面的inputvalue
-    list:state.list
+    list:state.list // store 里面的inputvalue 会映射到我们的props里面的inputvalue
   }
 }
 
@@ -39,19 +41,19 @@ const mapStateToPros = (state) => {
 const mapDispatchToProps = (dispatch) => { // 
   return {
     changeInputVale(e) {
-      const action = {
-        type: "change_input_value",
-        value: e.target.value
-      }
+      const action = change_input_value(e.target.value);
       dispatch(action);
     },
     handleClick(){
-      const action = {
-        type:'add_item'
-      }
+      const action = add_item();
       dispatch(action); // 发给store  store 会再发给 reducer
+    },
+    delete_item(index){
+      const action = delete_handle(index);
+      dispatch(action);
     }
   }
 }
 
+// connect 的方法的意思是将组件和store 做一个连接。
 export default connect(mapStateToPros, mapDispatchToProps)(TodoList);
