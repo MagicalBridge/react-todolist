@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'; // es6的解构赋值。
-import store from './store';  // 引入store index.js 可以默认额省略不写
+import store from './store/index.js';  // 引入store index.js 可以默认额省略不写
 import {CHANGE_INPUT_VALUE,ADD_TODO_ITEM,DELETE_ITEM} from './store/actionTypes';
 
 class TodoList extends Component {
@@ -63,6 +63,8 @@ class TodoList extends Component {
         store.dispatch(action);
     }
     handleStoreChange() {
+        // 使用store.subscribe 订阅一个事件  感知到数据已经变化的时候
+        // 重新将新的数据放入state中 
         this.setState(store.getState());
     }
 }
