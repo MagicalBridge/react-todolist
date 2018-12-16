@@ -30,11 +30,9 @@ export const initListAction = (data) => {
 
 export const getTodoList = () => {
   return (dispatch) => { // 接收 dispatch 
-    axios.post('http://www.ifruit.org:7300/mock/59afdddae4205b01cfc9ede5/api_1504685109840/front1/login.do', {
-      number: "13127733713"
-    })
+    axios.get('/list.json')
       .then(res => {
-        let _resData = res.data.list;
+        let _resData = res.data;
         const action = initListAction(_resData);
         dispatch(action); 
       })
