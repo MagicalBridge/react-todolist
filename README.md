@@ -180,6 +180,13 @@ this is react  prohect
    2. injectGlobal 这个api引用的时候 说明使用要的是注入全局的样式。
    3. 不同的浏览器内核对于原生的标签的表现形式是不一样的，因此会出现这样的问题。
    4. common文件夹里面存放公共的区块去管理复用的组件。
+
+
+#### 对header组件进行 combineReducer 的拆分。
+
+   1. 将组件内部的所有的 action 放在 actionCreator 中进行创建。
+   2. 
+
      
 
     

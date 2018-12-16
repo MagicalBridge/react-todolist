@@ -1,6 +1,8 @@
 import React from 'react';
 import { HeaderWrapper, Logo, Nav, NavItem, NavSearch, Addition, Button } from './headerStyle';
 import { connect } from 'react-redux';
+import { actionCreators} from './store/index.js';
+
 
 const Header = (props) => {
   return (
@@ -28,7 +30,7 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    focused: state.focused
+    focused: state.header.focused
   }
 }
 
@@ -36,16 +38,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleInputFocus() {
-      const action = {
-        type: 'search_focus'
-      }
-      dispatch(action);
+      // 将这个之前的对象创建放在  actionCreator 统一管理。
+      dispatch(actionCreators.searchFocus());
     },
     handleInputBlur() {
-      const action = {
-        type: 'search_blur'
-      }
-      dispatch(action);
+      dispatch(actionCreators.searchBlur());
     }
   }
 }
