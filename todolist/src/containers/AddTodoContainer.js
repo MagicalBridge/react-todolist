@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import AddTodo from "../components/AddTodo";
 import { setTodoText, addTodo } from "../action";
+import AddTodo from "../components/AddTodo";
 
 const mapStateToProps = state => ({
   text: state.text
@@ -11,7 +11,7 @@ const mapDispatchToProps = dispatch => ({
   addTodo: text => dispatch(addTodo(text))
 });
 
-export  default connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(AddTodo);
