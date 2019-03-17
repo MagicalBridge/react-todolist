@@ -293,6 +293,18 @@ state 代表的是 UI的 完整且最小状态集合
 
   如果某一个state 被多个组件依赖 寻找 共同的父组件 （状态上移）
 
+## action
+  type 这个参数是必须的,相当于给想要做的事件起一个名字
+
+## reducer
+  接收两个参数 
+  1、之前的state
+  2、action 
+
+  通过 reducer  返回一个新的 state
+
+## 
+
   
 
   
