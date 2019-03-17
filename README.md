@@ -321,6 +321,14 @@ store 是一个粘合剂
 
 action 通过 dispatch 发送到 store 
 
+## UI展示型的组件 容器型的组件 
+
+对于redux 是没有感知的，通过props取数据 调用props传递回调 如何创建 手写
+容器性组件 从redux store 获取数据  动过  store 的dispatch 发送 action 通过 react-redux 创建
+
+
+
+
 
   
 
