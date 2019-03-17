@@ -303,7 +303,24 @@ state 代表的是 UI的 完整且最小状态集合
 
   通过 reducer  返回一个新的 state
 
-## 
+## 拆分reducer
+  将所有的action 逻辑放在一个reducer 当中是不合适的。
+
+  为什么要拆分 reducer 主要是为了整个系统的扩展和维护。
+  拆分之后还需要进行合并。
+
+  一般拆分的逻辑是根据 state 的状态进行拆分的,
+
+  combinerReducer  进行和并 reduccer 
+
+
+
+## store 是什么
+
+store 是一个粘合剂
+
+action 通过 dispatch 发送到 store 
+
 
   
 
