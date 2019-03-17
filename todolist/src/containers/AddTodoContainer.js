@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { setTodoText, addTodo } from "../action";
+import { setTodoText, addTodo } from "../actions";
 import AddTodo from "../components/AddTodo";
 
 const mapStateToProps = state => ({

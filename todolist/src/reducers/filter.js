@@ -1,4 +1,4 @@
-import { SET_FILTER } from "../action/actionTypes";
+import { SET_FILTER } from "../actions/actionTypes";
 
 const filter = (state = 'all', action) => {
   switch (action.type) {

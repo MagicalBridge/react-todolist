@@ -1,4 +1,4 @@
-import { SET_TODO_TEXT } from "../action/actionTypes";
+import { SET_TODO_TEXT } from "../actions/actionTypes";
 
 const text = (state = '', action) => {
   switch (action.type) {

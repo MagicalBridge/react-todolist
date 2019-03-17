@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { setFilter } from "../action";
+import { setFilter } from "../actions";
 import Footer from "../components/Footer";
 
 const mapStateToProps = state => ({
