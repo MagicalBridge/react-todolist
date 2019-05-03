@@ -1,8 +1,7 @@
 import { connect } from "react-redux";
-import { toggleTodo } from "../actions";
+import { toggleTodo, fetchTodos } from "../actions";
 import TodoList from "../components/TodoList";
 
-// 过滤函数
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
     case "all":
@@ -17,11 +16,12 @@ const getVisibleTodos = (todos, filter) => {
 };
 
 const mapStateToProps = state => ({
-  todos: getVisibleTodos(state.todos, state.filter)
+  todos: getVisibleTodos(state.todos.data, state.filter)
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleTodo: id => dispatch(toggleTodo(id))
+  toggleTodo: id => dispatch(toggleTodo(id)),
+  fetchTodos: () => dispatch(fetchTodos())
 });
 
 export default connect(
