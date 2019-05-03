@@ -294,7 +294,16 @@ state 代表的是 UI的 完整且最小状态集合
   如果某一个state 被多个组件依赖 寻找 共同的父组件 （状态上移）
 
 ## action
+  描述如何修改状态一个action描述的是一种 state 的修改方式。
+
+  json 对象
+
   type 这个参数是必须的,相当于给想要做的事件起一个名字
+  想要使这个action发挥作用的时候，就应该想到
+  使用store.dispatch 这个方法将 action发送出去。
+
+  实际的应用中我们并不会直接定义action 而是创建一个actioncreator
+  去返回一个action对象。
 
 ## reducer
   接收两个参数 

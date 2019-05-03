@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { toggleTodo } from "../actions";
 import TodoList from "../components/TodoList";
 
+// 过滤函数
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
     case "all":
