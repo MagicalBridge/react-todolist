@@ -336,6 +336,32 @@ action 通过 dispatch 发送到 store
 容器性组件 从redux store 获取数据  动过  store 的dispatch 发送 action 通过 react-redux 创建
 
 
+## 如何正确定义异步的action
+我们会调用fetchTodos 这样的一个action
+这个action不会返回一个对象而是会直接执行调用服务器api的逻辑
+这里的异步action其实返回的是一个函数而不是一个js对象
+
+export const fetchTodos = () => {
+  return (dispatch) => {
+    // 首先发送一个 请求中的action
+    dispatch(fetchTodosRquest);
+    return fetch('../mock/todos.json').then( response=>{
+      response.json().then(data=>{
+        // 成功回来之后 派发 成功的action 将data 传递给 action的参数
+        dispatch(fetchTodosSuccess(data))
+      })
+    }),
+    error => {
+      // 请求失败 就派发 失败的 action 
+      dispatch(fetchTodosFailure(error))
+      console.log(`an error `+ error);      
+    }
+  }
+}
+
+这样处理之后 还是不够的 还需要进行对于initstate 数据的处理
+
+
 
 
 
